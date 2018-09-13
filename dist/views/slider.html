@@ -1,0 +1,10 @@
+<div class="slider">
+  <div class="slide" ng-repeat = "slide in slides">
+    <img ng-src="images/{{slide.pic}}" alt="" class="slide__pic">
+    <div class="slide__content main-container">
+      <div class="slide__header">{{slide.header}}</div>
+      <p class="slide__info">{{slide.info}}</p>
+      <a href="{{slide.link}}" class="button slide__btn">{{slide.btnText}}</a>
+    </div>
+  </div>
+</div>

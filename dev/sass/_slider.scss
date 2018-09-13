@@ -1,0 +1,103 @@
+.slide{
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  @include adaptive($tablet-sm){
+    height: 250px;
+  }
+  @include adaptive($phonelg){
+    height: 200px;
+  }
+  @include adaptive($phone){
+    height: 150px;   
+  }
+  &__pic{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  &__content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    z-index: 1;
+    color: $slide-text-clr;
+    @include adaptive($phone){
+      text-align: center; 
+    }
+  }
+  &__header{
+    font-size: 56px;
+    padding-top: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    @include adaptive($tablet-sm){
+      font-size: 40px;
+    }
+    @include adaptive($phonelg){
+      font-size: 32px;
+    }
+    @include adaptive($phone){
+      font-size: 24px;
+      padding-top: 0; 
+    }
+  }
+  &__info{
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    max-width: 450px;
+    @include adaptive($tablet-sm){
+      font-size: 24px;
+      max-width: 320px;
+    }
+    @include adaptive($phonelg){
+      font-size: 18px;
+      max-width: 250px;
+    }
+    @include adaptive($phone){
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &__btn{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $slide-text-clr;
+    line-height: 28px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    width: 300px;
+    border-radius: 7px;
+    vertical-align: middle;
+    background-color: $slide-btn-clr;
+    @include adaptive($tablet-sm){
+      font-size: 22px;
+      width: 200px;
+      line-height: 19px;
+      padding-top: 14px;
+      padding-bottom: 12px;
+    }
+    @include adaptive($phonelg){
+      font-size: 18px;
+      width: 180px;
+      line-height: 17px;
+    }
+    @include adaptive($phone){
+       margin-left: auto;
+       margin-right: auto;
+    }
+    &:hover{
+      background-color: darken($slide-btn-clr, 30%);
+    }
+    &:active{
+      background-color: darken($slide-btn-clr, 50%);
+    }
+  }
+}

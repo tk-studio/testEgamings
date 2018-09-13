@@ -1,0 +1,52 @@
+.main-container--withSidebar .page-content{
+  width: 75%;
+  @include adaptive($phonelg){
+    width: 100%;
+  }
+}
+
+.games-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-container--withSidebar .games-list{
+  padding-top: 4%;
+}
+
+.main-container--withSidebar{
+  .game{
+    width: 33.333%;
+    @include adaptive($tablet-sm){
+      width: 50%;
+    }
+    @include adaptive($phonelg){
+      width: 33.333%;
+    }
+    @include adaptive($phone){
+      width: 50%;
+    }
+  }
+}
+
+.game{
+  width: 25%;
+  padding-bottom: 3%;
+  text-align: center;
+  @include adaptive($tablet-sm){
+    width: 33.333%;
+  }
+  @include adaptive($phone){
+    width: 50%;   
+  }
+  &__pic{
+    max-width:300px;
+    width: 100%;
+    padding: 0;
+    @include adaptive($tablet-sm){
+      max-width: 200px;
+    }
+  }
+  &__link{
+    display: block;
+  }
+}

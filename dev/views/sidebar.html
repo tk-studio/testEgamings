@@ -1,0 +1,20 @@
+<div class="sidebar-menu">
+  <div class="sidebar-menu__header">{{sidebar.title}}</div>
+  <button class="button sidebar-button smart-toggle">
+    <div class="sidebar-button__container">
+      <span class="sidebar-button__icon"></span>
+      <span class="sidebar-button__icon"></span>
+      <span class="sidebar-button__icon"></span>
+    </div>
+  </button>
+  <ul class="sidebar-menu__nav sidebar-menu__nav--parent">
+    <li class="sidebar-menu__item" ng-repeat = "item in sidebar.categories">
+      <a href="" class="{{item.subCategories ? 'sidebar-menu__link smart-toggle' : 'sidebar-menu__link'}}">{{item.text}}</a>
+      <ul ng-if = "item.subCategories" class="sidebar-menu__nav sidebar-menu__nav--child">
+        <li class="sidebar-menu__item sidebar-menu__item--child" ng-repeat = "itemChild in item.subCategories">
+          <a href="" class="sidebar-menu__link sidebar-menu__link--child">{{itemChild.text}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

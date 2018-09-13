@@ -1,0 +1,39 @@
+<main class="main-container main-content">
+  <h1 class="page-header">{{$state.current.title}}</h1>
+    <form name="supportForm" class="contact-form" novalidate ng-submit="sendMessage(newMessage)">
+      <div class="field-wrapper">
+        <input 
+              id="support_email"
+              name = "userEmail"
+              placeholder="{{contactForm.email.placeholder}}"
+              type="email"
+              ng-required="requireValue"
+              ng-model="newMessage.email">
+        <label for="support_email">{{contactForm.email.title}} <span>*</span></label>
+        <div class="field-description-error" ng-show="supportForm.userEmail.$invalid && supportForm.userEmail.$dirty">
+          {{getError(supportForm.userEmail.$error)}}
+        </div>
+      </div>
+      <div class="field-wrapper">
+        <textarea 
+                  cols="30" 
+                  id="support_message" 
+                  name="userMessage"
+                  placeholder="{{contactForm.message.placeholder}}" 
+                  name="" 
+                  rows="5"
+                  ng-model="newMessage.message"
+                  ng-minlength="{{minLength}}"
+                  ng-maxlength="{{maxLength}}"
+                  ng-required="requireValue">
+        </textarea>
+        <label for="support_message">{{contactForm.message.title}} <span>*</span></label>
+        <div class="field-description-error" 
+            ng-show="supportForm.userMessage.$error.minlength && supportForm.userEmail.$dirty || supportForm.userMessage.$error.maxlength && supportForm.userEmail.$dirty">
+          {{getError(supportForm.userMessage.$error)}}
+        </div>
+      </div>
+      <button type="submit" class="button contact-form__btn" ng-disabled="supportForm.$invalid">{{contactForm.buttonText}}</button>
+  </form>
+  <br><br>
+</main>

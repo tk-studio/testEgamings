@@ -1,0 +1,199 @@
+.main-header{
+  height: 100px;
+  overflow: hidden;
+  background-color: $header-bg-clr;
+  @include adaptive($tablet-sm){
+    height: 60px;
+  }
+  &__container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.logo{
+  display: block;
+  width: 150px;
+  @include adaptive($tablet-sm){
+    width: 80px;
+  }
+  &__pic{
+    padding-top: 10px;
+    width: 100%;
+    margin-left: -25%;
+    @include adaptive($tablet-sm){
+      padding-top: 5px;
+    }
+  }
+}
+
+.main-menu{
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  @include adaptive($tablet-sm){
+    font-size: 14px;
+  }
+}
+.main-menu-list{
+  display: flex;
+  align-items: center;
+  margin-left: -35px;
+  @include adaptive($tablet-sm){
+    margin-left: -15px;
+  }
+  @include adaptive($phonelg){
+    display: none;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    background-color: $header-bg-clr;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 22px;
+    &.open{
+      display: block;
+    }
+  }
+  &__item{
+    padding-left: 15px;
+    padding-right: 15px;
+    @include adaptive($tablet-sm){
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+  }
+  &__link{
+    color: $menu-link-clr;
+    &:hover{
+      text-decoration: underline;
+    }
+    &.active{
+      color: $menu-link-active-clr;
+    }
+    @include adaptive($phonelg){
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+.menu-button{
+  display: none;
+  background-color: transparent;
+  margin-left: -10px;
+  width: 30px;
+  margin-top: 5px;
+  @include adaptive($phonelg){
+    display: block;
+  }
+  &__icon{
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: $text-clr;
+    transition: all .3s linear;
+  }
+  &.active{
+    .menu-button__icon{
+      &:nth-child(1){
+        width: 130%;
+        transform-origin: 50% 50%;
+        transform: translate(-2px, 6px) rotate(45deg);
+      }
+      &:nth-child(2){
+        opacity: 0;
+        transform: scale(0);
+      }
+      &:nth-child(3){
+        width: 130%;
+        transform-origin: 50% 50%;
+        transform: translate(-2px, -10px) rotate(-45deg);
+      }
+    }
+  } 
+}
+
+.user-block{
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 18px;
+  @include adaptive($tablet-sm){
+    font-size: 12px;
+  }
+}
+.user-balance{
+  padding-right: 20px;
+  @include adaptive($tablet-sm){
+    padding-right: 10px;
+  }
+  &__item{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    white-space: nowrap;
+    @include adaptive($phone){
+     padding: 0;
+     line-height: 1.1;
+     text-align: right; 
+    }
+  }
+  &__link{
+    color: $balance-clr;
+    &:hover{
+      text-decoration: underline;
+    }
+    @include adaptive($phone){
+     display: block; 
+    }
+  }
+}
+.user-icon{
+  width: 80px;
+  height: 80px;
+  display: block;
+  @include adaptive($tablet-sm){
+    width: 40px;
+    height: 40px;
+  }
+  &__pic{
+    width: 100%;
+  }
+}
+
+.logout{
+  height: 50px;
+  @include adaptive($tablet-sm){
+    height: 30px;
+  }
+  &__btn{
+    width: 50px;
+    margin-left: 20px;
+    background-color: transparent;
+    @include adaptive($tablet-sm){
+      width: 30px;
+      margin-left: 10px;
+    }
+  }
+  &__icon{
+    display: inline-block;
+    width: 50px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: $text-clr;
+    transition: all 0.3s linear;
+    @include adaptive($tablet-sm){
+      width: 30px;
+    }
+  }
+  &:hover{
+    .logout__icon{
+      fill: $menu-link-clr;
+    }
+  }
+}

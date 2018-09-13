@@ -1,0 +1,36 @@
+.contact-form{
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  &__btn{
+    display: block;
+    text-align: center;
+    text-transform: uppercase; 
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: bold;
+    min-width: 200px;
+    padding: 20px 15px 15px 15px;
+    border-radius: 7px;
+    color: $form-btn-text-clr;
+    background-color: $form-btn-bg-clr;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s linear;
+    &:hover{
+      background-color: darken($form-btn-bg-clr, 30%);
+    }
+    &:active{
+      background-color: darken($form-btn-bg-clr, 50%);
+    }
+    &[disabled]{
+      background-color: lighten($form-btn-bg-clr, 30%);
+    }
+  }
+  .ng-invalid.ng-dirty{
+    border-color: $form-border-error-clr;
+  }
+  .ng-valid.ng-dirty {
+    border-color: $form-border-clr;
+  }
+}

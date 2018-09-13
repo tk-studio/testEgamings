@@ -1,0 +1,115 @@
+.sidebar{
+  width: 25%;
+  margin-right: 2%;
+  @include adaptive($phonelg){
+    width: 100%;
+  }
+}
+.sidebar-menu{
+  font-size: 24px;
+  color: $sidebar-text-clr;
+  @include adaptive($tablet-sm){
+    font-size: 18px;
+  }
+  @include adaptive($phonelg){
+    text-align: center;
+  }
+  &__header{
+    margin-bottom: 15px;
+    @include adaptive($phonelg){
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+  }
+  &__nav{
+    margin: 0;
+    line-height: 1.2;
+    &--parent{
+      @include adaptive($phonelg){
+        display: none;
+        &.open{
+          display: block;
+        }
+      }
+    }
+    &--child{
+      display: none;
+      &.open{
+        display: block;
+      }
+    }
+  }
+  &__item{
+    @include adaptive($phonelg){
+      margin-top: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    &--child{
+      margin-left: 15px;
+      @include adaptive($phonelg){
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
+  }
+  &__link{
+    color: $sidebar-text-clr;
+    transition: all 0.3s linear;
+    white-space: nowrap;
+    &:hover{
+      color: $text-clr;
+    }
+    &--child{
+      &:before{
+        display: inline-block;
+        content:'>';
+        margin-right: 2%;
+        @include adaptive($phonelg){
+          content: '';
+          margin-right: 0;
+        }
+      }
+      @include adaptive($phonelg){
+        font-size: 16px;
+      }
+    }
+  }
+}
+.sidebar-button{
+  display: none;
+  background-color: transparent;
+  margin-left: 10px;
+  width: 25px;
+  position: relative;
+  top: 5px;
+  @include adaptive($phonelg){
+    display: inline-block;
+  }
+  &__icon{
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-bottom: 3px;
+    background-color: $sidebar-text-clr;
+    transition: all .3s linear;
+  }
+  &.active{
+    .sidebar-button__icon{
+      &:nth-child(1){
+        width: 120%;
+        transform-origin: 50% 50%;
+        transform: translate(-2px, 6px) rotate(45deg);
+      }
+      &:nth-child(2){
+        opacity: 0;
+        transform: scale(0);
+      }
+      &:nth-child(3){
+        width: 120%;
+        transform-origin: 50% 50%;
+        transform: translate(-2px, -6px) rotate(-45deg);
+      }
+    }
+  }
+}

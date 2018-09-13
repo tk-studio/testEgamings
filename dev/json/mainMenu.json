@@ -1,0 +1,5 @@
+[
+  { "text": "Главная", "link": "root.main" },
+  { "text": "Казино", "link": "root.slots" },
+  { "text": "Контакты", "link": "root.contacts" }
+]

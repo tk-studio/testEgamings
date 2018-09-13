@@ -1,0 +1,134 @@
+body{
+  background-color: $bg-clr;
+  color: $text-clr;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  *{
+    box-sizing: border-box;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.main-container{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  &--withSidebar{
+    display: flex;
+    @include adaptive($phonelg){
+      display: block;
+    }
+  }
+}
+.main-content{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.page-header{
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 1em;
+}
+
+// Формы поля форм и кнопки
+.button{
+  display: inline-block;
+  transition: all 0.4s linear;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  &:visited{
+    text-decoration: none;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+input,
+textarea{
+  font-size: 16px;
+  color: $form-text-clr;
+  background-color: $form-field-bg-clr;
+  border: 1px solid $form-border-clr;
+  border-radius: 2px;
+  line-height: 1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: block;
+  width: 100%;
+  transition: border-color .4s linear;
+  margin-top: 22px;
+  -webkit-appearance: none;
+  &+label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $form-label-clr;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color .4s linear;
+  }
+  &::placeholder{
+    font-size: inherit;
+    color: $form-placeholder-clr;
+    transition: color .4s linear;
+  }
+  &:focus{
+    outline: 0px auto transparent;
+    outline-offset: 0px;
+    border-color: $form-border-active-clr;
+    &+label{
+      color: $form-label-clr;
+    }
+    &::placeholder{
+      color: transparent;
+    }
+  }
+  box-shadow: inner 0 0 0 transparent;
+  &:invalid {
+    box-shadow: none;
+  }
+  
+  &:-moz-submit-invalid {
+    box-shadow: none;
+  }
+  
+  &:-moz-ui-invalid {
+    box-shadow:none;
+  }
+}
+input{
+  height: 50px;
+}
+.field-wrapper{
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.field-description-error{
+  color: $form-error-text-clr;
+  font-size: 12px;
+  position: absolute;
+  top: calc(100% + 2px);
+  line-height: 1;
+  left: 0;
+}

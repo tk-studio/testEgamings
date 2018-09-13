@@ -1,0 +1,11 @@
+{
+  "email": {
+    "title": "E-mail",
+    "placeholder": "Введите свой Email"
+  },
+  "message": {
+    "title": "Сообщение",
+    "placeholder": "Введите сообщение"
+  },
+  "buttonText": "Отправить" 
+}

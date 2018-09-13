@@ -1,0 +1,17 @@
+{ 
+  "balanceLabel": "Баланс",
+  "balanceLink": "#",
+  "balanceLinkTitle": "Касса", 
+  "bonusLabel": "Бонусы",
+  "bonusLink": "#",
+  "bonusLinkTitle": "Бонусы",
+  "profileLinkTitle": "Мой профиль",
+  "profileLink": "#",
+  "userCurrency":"$",
+  "userName": "Иван",
+  "userSecondName": "Петров",
+  "userBalance": 40000,
+  "userBonusBalance": 60000,
+  "userIcon": "user-icon.png"
+
+}

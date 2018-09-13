@@ -1,0 +1,12 @@
+//миксин для медиа запросов
+$phone : '(max-width: 375px)';
+$phonelg : '(max-width: 640px)';
+$tablet-sm: '(max-width: 768px)';
+$tablet-lg: '(max-width: 1024px)';
+$desktop: '(max-width: 1366px)';
+
+@mixin adaptive($media) {
+  @media only screen and #{$media} {
+      @content;
+  }
+}
